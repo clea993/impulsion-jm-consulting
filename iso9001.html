@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISO 9001 — Impulsion JM Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      min-height: calc(100vh - var(--nav-h));
+      padding: calc(var(--nav-h) + 80px) 32px 80px;
+      background: linear-gradient(180deg, rgba(40,57,82,0.95) 0%, rgba(244,247,250,0.92) 100%);
+      display: flex;
+      align-items: center;
+    }
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 18px;
+      font-family: var(--font-body);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 36px;
+      height: 1px;
+      background: var(--or);
+      margin-right: 14px;
+      vertical-align: middle;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      color: var(--marine);
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--or);
+    }
+    .hero-copy {
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #3b5166;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 30px;
+      border-radius: 2px;
+      border: 1px solid rgba(41,58,82,0.16);
+      color: var(--marine);
+      background: rgba(244,247,250,0.94);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(244,247,250,1);
+    }
+    .page-section {
+      padding: 80px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .page-section + .page-section {
+      border-top: 1px solid rgba(41,58,82,0.12);
+    }
+    .page-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 18px;
+      color: var(--marine);
+    }
+    .page-section p,
+    .page-section li {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #3b5166;
+      margin-bottom: 18px;
+    }
+    .page-section ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .page-section ul li::before {
+      content: '•';
+      color: var(--or);
+      display: inline-block;
+      width: 1.1em;
+      margin-left: -1.1em;
+    }
+    .page-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .panel {
+      background: rgba(41,58,82,0.08);
+      border: 1px solid rgba(41,58,82,0.14);
+      border-radius: 14px;
+      padding: 32px;
+    }
+    .panel h3 {
+      margin: 0 0 16px;
+      font-size: 1.15rem;
+      color: var(--marine);
+    }
+    .panel p {
+      color: #2d3e54;
+    }
+    @media (max-width: 900px) {
+      .page-grid {
+        grid-template-columns: 1fr;
+      }
+      .page-hero {
+        padding-top: calc(var(--nav-h) + 60px);
+      }
+    }
+    @media (max-width: 700px) {
+      .page-section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="IMPULSION JM CONSULTING – Accueil">
+        <img src="logo.png" alt="Logo Impulsion JM Consulting" />
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" role="navigation" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="qui-je-suis.html">Qui je suis</a></li>
+          <li><a href="iso9001.html" class="active">ISO 9001</a></li>
+          <li><a href="services.html">Nos services</a></li>
+          <li class="nav-cta"><a href="contact.html">Demander un devis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Norme ISO 9001</p>
+        <h1 class="hero-title">Construire un système de management de la qualité clair et durable</h1>
+        <p class="hero-copy">Impulsion JM Consulting accompagne les entreprises ambitieuses vers la conformité ISO 9001 grâce à une démarche pragmatique, centrée sur la satisfaction client et l'amélioration continue.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn-primary">Demander un devis</a>
+          <a href="#avantages" class="btn-secondary">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="avantages">
+      <h2>Pourquoi choisir ISO 9001 aujourd'hui</h2>
+      <div class="page-grid">
+        <div>
+          <p>La norme ISO 9001 structure vos pratiques internes, améliore la performance opérationnelle et construit une relation de confiance auprès de vos clients. Elle vous aide à piloter vos processus avec rigueur tout en restant agile.</p>
+          <ul>
+            <li>Clarifier les responsabilités et les objectifs.</li>
+            <li>Réduire les non-conformités et les incidents.</li>
+            <li>Améliorer la communication entre les équipes.</li>
+            <li>Valoriser votre engagement qualité sur le marché.</li>
+          </ul>
+        </div>
+        <aside class="panel">
+          <h3>Accompagnement sur mesure</h3>
+          <p>Audit initial, rédaction des documents essentiels, formation des équipes et soutien jusqu'à l'audit de certification.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h2>Notre approche</h2>
+      <p>J'accompagne chaque client avec une méthode adaptée à ses enjeux : analyse terrain, priorisation des actions, formalisation sans complexité et pilotage des résultats.</p>
+      <ul>
+        <li>Diagnostic de l'existant et évaluation des besoins.</li>
+        <li>Cartographie des processus clés et identification des risques.</li>
+        <li>Formalisation des procédures et mise en place d'indicateurs.</li>
+        <li>Préparation à l'audit et amélioration continue.</li>
+      </ul>
+    </section>
+
+    <section class="page-section">
+      <h2>Ce que vous obtenez</h2>
+      <div class="page-grid">
+        <div>
+          <p>Avec ISO 9001, vous obtenez un cadre structuré pour faire progresser votre activité, renforcer la satisfaction client et sécuriser votre croissance.</p>
+        </div>
+        <aside class="panel">
+          <h3>Valeurs clés</h3>
+          <p>- Meilleure maîtrise des processus</p>
+          <p>- Performance durable</p>
+          <p>- Meilleure attractivité commerciale</p>
+          <p>- Confiance renforcée des parties prenantes</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-footer" aria-label="IMPULSION JM CONSULTING – Accueil">
+          <img src="logo.png" alt="Logo Impulsion JM Consulting" />
+        </a>
+        <p>Conseil en management et qualité pour les entreprises ambitieuses. Accompagnement personnalisé pour structurer, optimiser et certifier vos processus.</p>
+        <p class="tagline">« Donner l'impulsion, tracer la voie. »</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-je-suis.html">Qui je suis</a></li>
+          <li><a href="iso9001.html">Norme ISO 9001</a></li>
+          <li><a href="services.html">Nos services</a></li>
+          <li><a href="contact.html">Demander un devis</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <address>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Julie MORANT</span>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <a href="mailto:morant.julie05@gmail.com">morant.julie05@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.5z"/>
+            </svg>
+            <a href="tel:+33628431809">06.28.43.18.09</a>
+          </div>
+        </address>
+      </div>
+    </div>
+    <div class="footer-divider"><hr /></div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> IMPULSION JM CONSULTING - Tous droits réservés</p>
+      <nav class="footer-bottom-links" aria-label="Liens légaux">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
