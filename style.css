@@ -178,7 +178,7 @@ main {
 .page-hero {
   min-height: calc(100vh - var(--nav-h));
   padding: calc(var(--nav-h) + 80px) 32px 80px;
-  background: rgba(244,247,250,0.92) 100%;
+  background: rgba(244,247,250,0.92) 100% ;
   display: flex;
   align-items: center;
 }
