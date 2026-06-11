@@ -8,164 +8,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .page-hero {
-      min-height: calc(100vh - var(--nav-h));
-      padding: calc(var(--nav-h) + 80px) 32px 80px;
-      background: linear-gradient(180deg, rgba(40,57,82,0.95) 0%, rgba(244,247,250,0.92) 100%);
-      display: flex;
-      align-items: center;
-    }
-    .hero-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 18px;
-      font-family: var(--font-body);
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 36px;
-      height: 1px;
-      background: var(--or);
-      margin-right: 14px;
-      vertical-align: middle;
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
-      font-weight: 300;
-      line-height: 1.05;
-      margin-bottom: 24px;
-      color: var(--marine);
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--or);
-    }
-    .hero-copy {
-      max-width: 760px;
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #3b5166;
-      margin-bottom: 32px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 30px;
-      border-radius: 2px;
-      border: 1px solid rgba(41,58,82,0.16);
-      color: var(--marine);
-      background: rgba(244,247,250,0.94);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-secondary:hover {
-      background: rgba(244,247,250,1);
-    }
-    .page-section {
-      padding: 80px 32px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .page-section + .page-section {
-      border-top: 1px solid rgba(41,58,82,0.12);
-    }
-    .page-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 300;
-      margin-bottom: 18px;
-      color: var(--marine);
-    }
-    .page-section p,
-    .page-section li {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #3b5166;
-      margin-bottom: 18px;
-    }
-    .page-section ul {
-      list-style: none;
-      padding-left: 0;
-      display: grid;
-      gap: 12px;
-    }
-    .page-section ul li::before {
-      content: '•';
-      color: var(--or);
-      display: inline-block;
-      width: 1.1em;
-      margin-left: -1.1em;
-    }
-    .page-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 40px;
-      align-items: start;
-    }
-    .panel {
-      background: rgba(41,58,82,0.08);
-      border: 1px solid rgba(41,58,82,0.14);
-      border-radius: 14px;
-      padding: 32px;
-    }
-    .panel h3 {
-      margin: 0 0 16px;
-      font-size: 1.15rem;
-      color: var(--marine);
-    }
-    .panel p {
-      color: #2d3e54;
-    }
-    @media (max-width: 900px) {
-      .page-grid {
-        grid-template-columns: 1fr;
-      }
-      .page-hero {
-        padding-top: calc(var(--nav-h) + 60px);
-      }
-    }
-    @media (max-width: 700px) {
-      .page-section {
-        padding: 60px 20px;
-      }
-    }
-  </style>
 </head>
 <body>
 
+  <!-- ════════════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════════════ -->
   <header>
     <div class="header-inner">
+
+      <!-- Logo cliquable → accueil -->
       <a href="index.html" class="logo-link" aria-label="IMPULSION JM CONSULTING – Accueil">
         <img src="logo.png" alt="Logo Impulsion JM Consulting" />
       </a>
+
+      <!-- Hamburger (mobile) -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
+
+      <!-- Navigation principale -->
       <nav id="main-nav" role="navigation" aria-label="Navigation principale">
         <ul class="nav-list">
           <li><a href="qui-je-suis.html">Qui je suis</a></li>
-          <li><a href="iso9001.html" class="active">ISO 9001</a></li>
+          <li><a href="iso9001.html">ISO 9001</a></li>
           <li><a href="services.html">Nos services</a></li>
           <li class="nav-cta"><a href="contact.html">Demander un devis</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
@@ -229,8 +100,13 @@
     </section>
   </main>
 
+ <!-- ════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════ -->
   <footer>
     <div class="footer-top">
+
+      <!-- Colonne 1 – Identité -->
       <div class="footer-brand">
         <a href="index.html" class="logo-footer" aria-label="IMPULSION JM CONSULTING – Accueil">
           <img src="logo.png" alt="Logo Impulsion JM Consulting" />
@@ -238,16 +114,20 @@
         <p>Conseil en management et qualité pour les entreprises ambitieuses. Accompagnement personnalisé pour structurer, optimiser et certifier vos processus.</p>
         <p class="tagline">« Donner l'impulsion, tracer la voie. »</p>
       </div>
+
+      <!-- Colonne 2 – Navigation -->
       <div class="footer-col">
         <h3>Navigation</h3>
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="qui-je-suis.html">Qui je suis</a></li>
-          <li><a href="iso9001.html">Norme ISO 9001</a></li>
+          <li><a href="iso-9001.html">Norme ISO 9001</a></li>
           <li><a href="services.html">Nos services</a></li>
           <li><a href="contact.html">Demander un devis</a></li>
         </ul>
       </div>
+
+      <!-- Colonne 3 – Contact -->
       <div class="footer-col">
         <h3>Contact</h3>
         <address>
@@ -271,8 +151,11 @@
           </div>
         </address>
       </div>
+
     </div>
+
     <div class="footer-divider"><hr /></div>
+
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> IMPULSION JM CONSULTING - Tous droits réservés</p>
       <nav class="footer-bottom-links" aria-label="Liens légaux">
