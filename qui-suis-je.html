@@ -1,40 +1,347 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julie Morant — Ingénieure en Gestion des Risques Environnementaux</title>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="jm.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julie Morant — Ingénieure en Gestion des Risques Environnementaux</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --black: #000000;
+        --blue: #293a53;
+        --gold: #baa581;
+        --olive: #7b7747;
+        --grey: #797470;
+        --light: #cdc9c4;
+        --white: #ffffff;
+        --bg: #f5f3f0;
+      }
 
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
- <header>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--black);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 80px 40px 120px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 56px;
+        align-items: start;
+        margin-bottom: 80px;
+      }
+
+      .hero-photo-wrap {
+        position: relative;
+      }
+
+      .hero-photo {
+        width: 240px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+        display: block;
+        background: var(--light);
+      }
+
+      .hero-photo-wrap::before {
+        content: '';
+        position: absolute;
+        inset: 12px -12px -12px 12px;
+        background: var(--gold);
+        border-radius: 4px;
+        z-index: -1;
+      }
+
+      .hero-right {
+        padding-top: 8px;
+      }
+
+      .hero-eyebrow {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        font-family: 'League Spartan', sans-serif;
+        font-size: 3.4rem;
+        font-weight: 700;
+        line-height: 1.05;
+        color: var(--blue);
+        margin-bottom: 6px;
+      }
+
+      .hero-school {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.95rem;
+        color: var(--grey);
+        margin-bottom: 28px;
+        font-style: italic;
+      }
+
+      .divider {
+        width: 40px;
+        height: 3px;
+        background: var(--gold);
+        margin-bottom: 24px;
+      }
+
+      .hero-intro {
+        font-size: 0.97rem;
+        color: #3a3836;
+        line-height: 1.85;
+        font-weight: 300;
+      }
+
+      .section-label {
+        font-family: 'League Spartan', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-family: 'League Spartan', sans-serif;
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: var(--blue);
+        line-height: 1.15;
+        margin-bottom: 40px;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 32px;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 0;
+        width: 1.5px;
+        background: var(--light);
+      }
+
+      .entry {
+        position: relative;
+        margin-bottom: 44px;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry::before {
+        content: '';
+        position: absolute;
+        left: -37px;
+        top: 9px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--gold);
+      }
+
+      .entry-inner {
+        background: var(--white);
+        border-radius: 6px;
+        padding: 28px 32px;
+        border: 1px solid rgba(186, 165, 129, 0.18);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      .entry-inner:hover {
+        box-shadow: 0 8px 32px rgba(41, 58, 83, 0.08);
+        transform: translateY(-2px);
+      }
+
+      .entry-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 14px;
+      }
+
+      .logo-wrap {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        background: var(--bg);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .logo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 6px;
+      }
+
+      .entry-meta {
+        flex: 1;
+      }
+
+      .entry-org {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--blue);
+        line-height: 1.3;
+      }
+
+      .entry-role {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--olive);
+        margin-top: 3px;
+      }
+
+      .entry-date {
+        font-size: 0.8rem;
+        color: var(--grey);
+        white-space: nowrap;
+        padding-top: 4px;
+        font-style: italic;
+      }
+
+      .entry-text {
+        font-size: 0.9rem;
+        color: #3a3836;
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      .entry-text p {
+        margin-bottom: 6px;
+      }
+
+      .entry-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .role-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--blue);
+        background: rgba(41, 58, 83, 0.07);
+        border-radius: 40px;
+        padding: 4px 12px;
+      }
+
+      .pill span {
+        color: var(--grey);
+        font-weight: 400;
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          padding: 48px 24px 80px;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 36px;
+          margin-bottom: 56px;
+        }
+
+        .hero-photo-wrap {
+          display: flex;
+          justify-content: center;
+        }
+
+        .hero-photo {
+          width: 180px;
+          height: 220px;
+        }
+
+        h1 {
+          font-size: 2.6rem;
+        }
+
+        .entry-header {
+          flex-wrap: wrap;
+        }
+
+        .entry-date {
+          width: 100%;
+          padding-top: 0;
+          margin-top: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
       <div class="header-inner">
         <!-- Logo cliquable → accueil -->
-        <a
-          href="index.html"
-          class="logo-link"
-          aria-label="IMPULSION JM CONSULTING – Accueil"
-        >
+        <a href="index.html" class="logo-link" aria-label="IMPULSION JM CONSULTING – Accueil">
           <img src="logo.png" alt="Logo Impulsion JM Consulting" />
         </a>
 
         <!-- Hamburger (mobile) -->
-        <button
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="main-nav"
-          aria-label="Ouvrir le menu"
-        >
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
           <span></span><span></span><span></span>
         </button>
 
         <!-- Navigation principale -->
         <nav id="main-nav" role="navigation" aria-label="Navigation principale">
           <ul class="nav-list">
-            <li><a href="qui-je-suis.html">Qui je suis</a></li>
+            <li><a href="qui-suis-je.html">Qui je suis</a></li>
             <li><a href="iso-9001.html">ISO 9001</a></li>
-            <li><a href="services.html">Nos services</a></li>
+            <li><a href="nos-services.html">Nos services</a></li>
             <li class="nav-cta">
               <a href="contact.html">Demander un devis</a>
             </li>
@@ -43,440 +350,133 @@
       </div>
     </header>
 
+    <main class="page">
+      <section class="hero">
+        <div class="hero-photo-wrap">
+          <img src="photoJulie.png" alt="Julie MORANT" class="hero-photo" />
+        </div>
 
-<style>
-  :root {
-    --black:   #000000;
-    --blue:    #293a53;
-    --gold:    #baa581;
-    --olive:   #7b7747;
-    --grey:    #797470;
-    --light:   #cdc9c4;
-    --white:   #ffffff;
-    --bg:      #f5f3f0;
-  }
+        <div class="hero-right">
+          <p class="hero-eyebrow">Ingénierie &amp; Environnement</p>
+          <h1>Julie<br />MORANT</h1>
+          <p class="hero-school">ESAIP, École d'Ingénieurs — Gestion des Risques Environnementaux</p>
+          <div class="divider"></div>
+          <p class="hero-intro">
+            Passionnée par les enjeux environnementaux et la gestion des risques,
+            je construis mon parcours à travers des responsabilités associatives,
+            des expériences professionnelles terrain et un engagement fort
+            dans les réseaux Junior-Entreprises. Mon ambition : contribuer
+            à des projets ayant un impact mesurable sur les organisations
+            et leur environnement.
+          </p>
+        </div>
+      </section>
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      <div>
+        <p class="section-label">Parcours</p>
+        <h2 class="section-title">Expériences</h2>
 
-  html { scroll-behavior: smooth; }
+        <div class="timeline">
+          <div class="entry">
+            <div class="entry-inner">
+              <div class="entry-header">
+                <div class="logo-wrap">
+                  <img src="logo-junior.png" alt="Junior Conseil AQSE" />
+                </div>
+                <div class="entry-meta">
+                  <div class="entry-org">Junior Conseil AQSE — ESAIP</div>
+                  <div class="entry-role">Responsable suivi d'étude · Présidente · Vice-présidente</div>
+                </div>
+                <div class="entry-date">nov. 2023 – avr. 2026 · 2 ans 6 mois</div>
+              </div>
 
-  body {
-    background: var(--bg);
-    color: var(--black);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+              <div class="role-pills">
+                <div class="pill">Responsable suivi d'étude <span>nov. 2025 – avr. 2026</span></div>
+                <div class="pill">Présidente <span>nov. 2024 – nov. 2025</span></div>
+                <div class="pill">Vice-présidente <span>nov. 2023 – nov. 2024</span></div>
+              </div>
 
-  /* ── LAYOUT ── */
-  .page {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 80px 40px 120px;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 56px;
-    align-items: start;
-    margin-bottom: 80px;
-  }
-
-  .hero-photo-wrap {
-    position: relative;
-  }
-
-  .hero-photo {
-    width: 240px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
-    background: var(--light);
-  }
-
-  /* accent bar behind the photo */
-  .hero-photo-wrap::before {
-    content: '';
-    position: absolute;
-    inset: 12px -12px -12px 12px;
-    background: var(--gold);
-    border-radius: 4px;
-    z-index: -1;
-  }
-
-  .hero-right {
-    padding-top: 8px;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
-  }
-
-  h1 {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 3.4rem;
-    font-weight: 700;
-    line-height: 1.05;
-    color: var(--blue);
-    margin-bottom: 6px;
-  }
-
-  .hero-school {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.95rem;
-    color: var(--grey);
-    margin-bottom: 28px;
-    font-style: italic;
-  }
-
-  .divider {
-    width: 40px;
-    height: 3px;
-    background: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  .hero-intro {
-    font-size: 0.97rem;
-    color: #3a3836;
-    line-height: 1.85;
-    font-weight: 300;
-  }
-
-  /* ── SECTION TITLE ── */
-  .section-label {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-
-  .section-title {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--blue);
-    line-height: 1.15;
-    margin-bottom: 40px;
-  }
-
-  /* ── TIMELINE ── */
-  .timeline {
-    position: relative;
-    padding-left: 32px;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 0;
-    width: 1.5px;
-    background: var(--light);
-  }
-
-  /* ── ENTRY ── */
-  .entry {
-    position: relative;
-    margin-bottom: 44px;
-  }
-
-  .entry:last-child { margin-bottom: 0; }
-
-  /* dot on the line */
-  .entry::before {
-    content: '';
-    position: absolute;
-    left: -37px;
-    top: 9px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 2px solid var(--gold);
-  }
-
-  .entry-inner {
-    background: var(--white);
-    border-radius: 6px;
-    padding: 28px 32px;
-    border: 1px solid rgba(186,165,129,0.18);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-  }
-
-  .entry-inner:hover {
-    box-shadow: 0 8px 32px rgba(41,58,83,0.08);
-    transform: translateY(-2px);
-  }
-
-  .entry-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 14px;
-  }
-
-  .logo-wrap {
-    width: 52px;
-    height: 52px;
-    border-radius: 8px;
-    background: var(--bg);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .logo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 6px;
-  }
-
-  .entry-meta { flex: 1; }
-
-  .entry-org {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--blue);
-    line-height: 1.3;
-  }
-
-  .entry-role {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--olive);
-    margin-top: 3px;
-  }
-
-  .entry-date {
-    font-size: 0.8rem;
-    color: var(--grey);
-    white-space: nowrap;
-    padding-top: 4px;
-    font-style: italic;
-  }
-
-  .entry-text {
-    font-size: 0.9rem;
-    color: #3a3836;
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  .entry-text p { margin-bottom: 6px; }
-  .entry-text p:last-child { margin-bottom: 0; }
-
-  /* tag pill for sub-roles */
-  .role-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--blue);
-    background: rgba(41,58,83,0.07);
-    border-radius: 40px;
-    padding: 4px 12px;
-  }
-
-  .pill span {
-    color: var(--grey);
-    font-weight: 400;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 680px) {
-    .page { padding: 48px 24px 80px; }
-
-    .hero {
-      grid-template-columns: 1fr;
-      gap: 36px;
-      margin-bottom: 56px;
-    }
-
-    .hero-photo-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-photo {
-      width: 180px;
-      height: 220px;
-    }
-
-    h1 { font-size: 2.6rem; }
-
-    .entry-header { flex-wrap: wrap; }
-    .entry-date { width: 100%; padding-top: 0; margin-top: 4px; }
-  }
-</style>
-</head>
-<body>
-<main class="page">
-
-  <!-- ───── HERO ───── -->
-  <section class="hero">
-    <div class="hero-photo-wrap">
-      <img src="photoJulie.png" alt="Julie MORANT" class="hero-photo">
-    </div>
-
-    <div class="hero-right">
-      <p class="hero-eyebrow">Ingénierie & Environnement</p>
-      <h1>Julie<br>MORANT</h1>
-      <p class="hero-school">ESAIP, École d'Ingénieurs — Gestion des Risques Environnementaux</p>
-      <div class="divider"></div>
-      <p class="hero-intro">
-        Passionnée par les enjeux environnementaux et la gestion des risques,
-        je construis mon parcours à travers des responsabilités associatives,
-        des expériences professionnelles terrain et un engagement fort
-        dans les réseaux Junior-Entreprises. Mon ambition : contribuer
-        à des projets ayant un impact mesurable sur les organisations
-        et leur environnement.
-      </p>
-    </div>
-  </section>
-
-  <!-- ───── EXPERIENCES ───── -->
-  <div>
-    <p class="section-label">Parcours</p>
-    <h2 class="section-title">Expériences</h2>
-
-    <div class="timeline">
-
-      <!-- Junior Conseil AQSE -->
-      <div class="entry">
-        <div class="entry-inner">
-          <div class="entry-header">
-            <div class="logo-wrap">
-              <img src="logojunior.png" alt="Junior Conseil AQSE">
+              <div class="entry-text">
+                <p>Gestion et accompagnement des membres, suivi des projets et pilotage de la structure — de la vice-présidence à la présidence, j'ai porté le développement de la Junior à chaque niveau de responsabilité.</p>
+                <p>Animation de la vie associative, relations avec les entreprises partenaires et suivi opérationnel des études réalisées pour des clients externes.</p>
+              </div>
             </div>
-            <div class="entry-meta">
-              <div class="entry-org">Junior Conseil AQSE — ESAIP</div>
-              <div class="entry-role">Responsable suivi d'étude · Présidente · Vice-présidente</div>
-            </div>
-            <div class="entry-date">nov. 2023 – avr. 2026 · 2 ans 6 mois</div>
           </div>
 
-          <div class="role-pills">
-            <div class="pill">Responsable suivi d'étude <span>nov. 2025 – avr. 2026</span></div>
-            <div class="pill">Présidente <span>nov. 2024 – nov. 2025</span></div>
-            <div class="pill">Vice-présidente <span>nov. 2023 – nov. 2024</span></div>
+          <div class="entry">
+            <div class="entry-inner">
+              <div class="entry-header">
+                <div class="logo-wrap">
+                  <img src="logo-jem.png" alt="Junior-Entreprises Méditerranée" />
+                </div>
+                <div class="entry-meta">
+                  <div class="entry-org">Junior-Entreprises Méditerranée</div>
+                  <div class="entry-role">Porte-parole régionale</div>
+                </div>
+                <div class="entry-date">mai 2025 – avr. 2026 · 1 an</div>
+              </div>
+
+              <div class="entry-text">
+                <p>Représentation des Junior-Entreprises de la région Méditerranée auprès de la CNJE, des partenaires institutionnels et des professionnels.</p>
+                <p>Animation du réseau régional, communication externe, coordination d'événements et valorisation des initiatives locales.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="entry-text">
-            <p>Gestion et accompagnement des membres, suivi des projets et pilotage de la structure — de la vice-présidence à la présidence, j'ai porté le développement de la Junior à chaque niveau de responsabilité.</p>
-            <p>Animation de la vie associative, relations avec les entreprises partenaires et suivi opérationnel des études réalisées pour des clients externes.</p>
+          <div class="entry">
+            <div class="entry-inner">
+              <div class="entry-header">
+                <div class="logo-wrap">
+                  <img src="logo-palais-cannes.png" alt="Palais des Festivals de Cannes" />
+                </div>
+                <div class="entry-meta">
+                  <div class="entry-org">Palais des Festivals et des Congrès de Cannes</div>
+                  <div class="entry-role">Stagiaire — Mission RSE &amp; Bilan GES</div>
+                </div>
+                <div class="entry-date">févr. 2024 · 1 mois</div>
+              </div>
+
+              <div class="entry-text">
+                <p>Mission principale : identifier et sélectionner un outil informatique de réalisation de bilan d'émissions de gaz à effet de serre (GES) répondant aux critères du Palais.</p>
+                <p>Mailing, phoning, visioconférences avec éditeurs, benchmark des solutions disponibles et présentation des conclusions en réunion de direction.</p>
+                <p>Missions complémentaires : mise à jour documentaire, contribution au bilan RSE 2023 et rédaction du document « Point d'étape sur la politique de contribution carbone ».</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-inner">
+              <div class="entry-header">
+                <div class="logo-wrap">
+                  <img src="logo-solaia.png" alt="Estérel Aventures" />
+                </div>
+                <div class="entry-meta">
+                  <div class="entry-org">Estérel Aventures</div>
+                  <div class="entry-role">Employée polyvalente — CDD saisonnier</div>
+                </div>
+                <div class="entry-date">juil. – août 2023 · 2 mois</div>
+              </div>
+
+              <div class="entry-text">
+                <p>Poste polyvalent au sein d'un site de loisirs en Provence-Alpes-Côte d'Azur : gestion de la caisse, accueil et relation client, soutien aux activités quotidiennes de la structure.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </main>
 
-      <!-- Porte-parole JEM -->
-      <div class="entry">
-        <div class="entry-inner">
-          <div class="entry-header">
-            <div class="logo-wrap">
-              <img src="logojem.png" alt="Junior-Entreprises Méditerranée">
-            </div>
-            <div class="entry-meta">
-              <div class="entry-org">Junior-Entreprises Méditerranée</div>
-              <div class="entry-role">Porte-parole régionale</div>
-            </div>
-            <div class="entry-date">mai 2025 – avr. 2026 · 1 an</div>
-          </div>
-
-          <div class="entry-text">
-            <p>Représentation des Junior-Entreprises de la région Méditerranée auprès de la CNJE, des partenaires institutionnels et des professionnels.</p>
-            <p>Animation du réseau régional, communication externe, coordination d'événements et valorisation des initiatives locales.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Palais des Festivals -->
-      <div class="entry">
-        <div class="entry-inner">
-          <div class="entry-header">
-            <div class="logo-wrap">
-              <img src="logopalaiscannes.png" alt="Palais des Festivals de Cannes">
-            </div>
-            <div class="entry-meta">
-              <div class="entry-org">Palais des Festivals et des Congrès de Cannes</div>
-              <div class="entry-role">Stagiaire — Mission RSE &amp; Bilan GES</div>
-            </div>
-            <div class="entry-date">févr. 2024 · 1 mois</div>
-          </div>
-
-          <div class="entry-text">
-            <p>Mission principale : identifier et sélectionner un outil informatique de réalisation de bilan d'émissions de gaz à effet de serre (GES) répondant aux critères du Palais.</p>
-            <p>Mailing, phoning, visioconférences avec éditeurs, benchmark des solutions disponibles et présentation des conclusions en réunion de direction.</p>
-            <p>Missions complémentaires : mise à jour documentaire, contribution au bilan RSE 2023 et rédaction du document « Point d'étape sur la politique de contribution carbone ».</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Estérel Aventures -->
-      <div class="entry">
-        <div class="entry-inner">
-          <div class="entry-header">
-            <div class="logo-wrap">
-              <img src="logosolaia.png" alt="Estérel Aventures">
-            </div>
-            <div class="entry-meta">
-              <div class="entry-org">Estérel Aventures</div>
-              <div class="entry-role">Employée polyvalente — CDD saisonnier</div>
-            </div>
-            <div class="entry-date">juil. – août 2023 · 2 mois</div>
-          </div>
-
-          <div class="entry-text">
-            <p>Poste polyvalent au sein d'un site de loisirs en Provence-Alpes-Côte d'Azur : gestion de la caisse, accueil et relation client, soutien aux activités quotidiennes de la structure.</p>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /timeline -->
-  </div>
-
-</main>
-
-<footer>
+    <!-- Footer -->
+    <footer>
       <div class="footer-top">
-        <!-- Colonne 1 – Identité -->
+        <!-- Identité -->
         <div class="footer-brand">
           <a
             href="index.html"
             class="logo-footer"
             aria-label="IMPULSION JM CONSULTING – Accueil"
           >
-            <img src="logo-sans-fond.png" alt="Logo Impulsion JM Consulting" />
+            <img src="logo.png" alt="Logo Impulsion JM Consulting" />
           </a>
           <p>
             Conseil en management et qualité pour les entreprises ambitieuses.
@@ -485,19 +485,19 @@
           </p>
         </div>
 
-        <!-- Colonne 2 – Navigation -->
+        <!-- Navigation -->
         <div class="footer-col">
           <h3>Navigation</h3>
           <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="qui-je-suis.html">Qui je suis</a></li>
-            <li><a href="iso-9001.html">Norme ISO 9001</a></li>
-            <li><a href="services.html">Nos services</a></li>
+            <li><a href="qui-suis-je.html">Qui je suis</a></li>
+            <li><a href="iso-9001.html">ISO 9001</a></li>
+            <li><a href="nos-services.html">Nos services</a></li>
             <li><a href="contact.html">Demander un devis</a></li>
           </ul>
         </div>
 
-        <!-- Colonne 3 – Contact -->
+        <!-- Contact -->
         <div class="footer-col">
           <h3>Contact</h3>
           <address>
@@ -591,9 +591,11 @@
         </p>
         <nav class="footer-bottom-links" aria-label="Liens légaux">
           <a href="mentions-legales.html">Mentions légales</a>
-          <a href="politique-confidentialite.html">Confidentialité</a>
+          <a href="confidentialite.html">Confidentialité</a>
         </nav>
       </div>
     </footer>
-</body>
+
+    <script src="main.js"></script>
+  </body>
 </html>
